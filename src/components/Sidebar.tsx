@@ -81,9 +81,10 @@ function Sidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed pl-2 lg:static top-0 left-0 w-[18rem] lg:w-[35rem] h-screen bg-white shadow-xl transition-transform transform ${
+        className={`fixed pl-2 lg:static top-0 left-0 w-[18rem] h-v lg:w-[35rem] bg-white shadow-xl transition-transform transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         } duration-300 ease-in-out z-40`}
+        style={{ height: "100vh" }} // Ensure the sidebar takes full height of the viewport
       >
         <header className="flex mb-4 pr-1 border-b py-2 w-full">
           <div className="flex items-center flex-none mr-10">
@@ -104,7 +105,8 @@ function Sidebar() {
             </div>
           </div>
         </header>
-        <div className="overflow-auto h-full pb-24">
+        {/* Scrollable Area */}
+        <div className="overflow-y-auto h-[calc(100vh-128px)] mb-10">
           {Object.keys(parsedObjects)
             .sort()
             .map((letter, index) => (
@@ -118,7 +120,7 @@ function Sidebar() {
                     </span>
                   </h2>
                 </header>
-                <div className="flex flex-col ">
+                <div className="flex flex-col">
                   {parsedObjects[letter].results.map((item) => (
                     <div
                       key={item.id?.toString()}
