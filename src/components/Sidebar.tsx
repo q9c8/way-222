@@ -81,7 +81,7 @@ function Sidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed lg:static top-0 left-0 w-[18rem] lg:w-[35rem] h-screen bg-white shadow-xl transition-transform transform ${
+        className={`fixed pl-2 lg:static top-0 left-0 w-[18rem] lg:w-[35rem] h-screen bg-white shadow-xl transition-transform transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         } duration-300 ease-in-out z-40`}
       >
@@ -104,7 +104,7 @@ function Sidebar() {
             </div>
           </div>
         </header>
-        <div className="overflow-auto h-full">
+        <div className="overflow-auto h-full pb-24">
           {Object.keys(parsedObjects)
             .sort()
             .map((letter, index) => (
@@ -114,7 +114,7 @@ function Sidebar() {
                     {letter}
                     <span className="ml-2 text-sm font-medium text-gray-900">
                       - {parsedObjects[letter].len}{" "}
-                      {parsedObjects[letter].len === 1 ? "Result" : "Results"}
+                      {parsedObjects[letter].len === 1 ? "Room" : "Rooms"}
                     </span>
                   </h2>
                 </header>
