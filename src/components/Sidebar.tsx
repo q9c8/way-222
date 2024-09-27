@@ -1,4 +1,4 @@
-import logo from "../assets/img/logo.jfif";
+import logo from "../assets/img/logo1.jpg";
 import { FiChevronRight, FiMenu, FiX } from "react-icons/fi";
 import { useContext, useEffect, useState } from "react";
 import {
