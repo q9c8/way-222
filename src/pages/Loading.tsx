@@ -1,4 +1,4 @@
-import logo from "@/logo.jpg";
+import logo from "@/logo.jfif";
 function Loading() {
   return (
     <div className="flex items-center justify-center h-screen">

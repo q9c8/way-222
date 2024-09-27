@@ -1,4 +1,4 @@
-import logo from "../assets/img/logo.jpg";
+import logo from "../assets/img/logo.jfif";
 import { FiChevronRight, FiMenu, FiX } from "react-icons/fi";
 import { useContext, useEffect, useState } from "react";
 import {
@@ -81,7 +81,7 @@ function Sidebar() {
 
       {/* Sidebar */}
       <aside
-        className={`fixed pl-2 lg:static top-0 left-0 w-[18rem] h-v lg:w-[35rem] bg-white shadow-xl transition-transform transform ${
+        className={`fixed pl-2 sm:pb-12 md:pb-12 lg:static top-0 left-0 w-[18rem] h-v lg:w-[35rem] bg-white shadow-xl transition-transform transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         } duration-300 ease-in-out z-40`}
         style={{ height: "100vh" }} // Ensure the sidebar takes full height of the viewport
@@ -92,13 +92,13 @@ function Sidebar() {
               <img
                 src={logo}
                 alt="PathPal"
-                className={` ${isRotating ? "rotate" : ""}`}
+                className={` rounded-lg ${isRotating ? "rotate" : ""}`}
                 onClick={() => setIsRotating(true)}
                 onAnimationEnd={() => setIsRotating(false)}
               />
             </div>
             <div className="flex flex-col">
-              <p className="text-2xl font-semibold text-gray-900 pl-2">OSD</p>
+              <p className="text-2xl font-semibold text-gray-900 pl-2">CCSIT</p>
               <p className="text-sm font-semibold text-[#225EA9] pl-2">
                 Indoor-Navigation
               </p>
