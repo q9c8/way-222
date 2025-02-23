@@ -10,7 +10,23 @@ function Objects({ handleObjectClick, className }: ObjectsProps) {
 
   return (
     <g id="Objects">
-      <path
+
+<path
+id="G136"
+className={`${className} object`}
+d="M662.456 664.811h38.321v58.115h-38.321z"
+    style={{
+      transformBox: "fill-box",
+      transformOrigin: "50% 50%",
+      strokeWidth: 0,
+      stroke: "#f46c6c",
+      fill: "#f2a0a0",
+    }}
+    transform="rotate(45 -298.266 -221.451)"
+    onClick={(e) => handleObjectClick(e)}
+  />
+
+      {/* <path
         id="M250-8"
         className={`${className} object`}
         d="M1191.208 498.157h224.309v92.559h-224.309z"
@@ -74,7 +90,7 @@ function Objects({ handleObjectClick, className }: ObjectsProps) {
 
 
       {/* Add more paths or other elements as needed */}
-      <ellipse
+      {/* <ellipse
         id="Entrance"
         cx={1157.655}
         cy={1072.459}
@@ -99,7 +115,7 @@ function Objects({ handleObjectClick, className }: ObjectsProps) {
         >
           Rate Our service here! 
         </text>
-      </a>
+      </a> */} 
 
 
 
