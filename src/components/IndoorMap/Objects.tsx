@@ -4,9 +4,7 @@ interface ObjectsProps {
 }
 
 function Objects({ handleObjectClick, className }: ObjectsProps) {
-  const handleSurveyClick = (url: string) => {
-    window.open(url, "_blank");
-  };
+  
 
   return (
     <g id="Objects">
