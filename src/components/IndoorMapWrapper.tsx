@@ -14,11 +14,9 @@ import Controls from "./MapControls";
 import ObjectDetailsModal from "./Modals/ObjectDetailsModal";
 import { navigateToObject } from "@/utils/navigationHelper";
 import { toast } from "react-toastify";
-import {FloorContext} from "@/pages/Map";
+import { FloorContext } from "@/pages/Map";
 
-
-
-function IndoorMapWrapper( {selectedFloor}: { selectedFloor: string;}) {
+function IndoorMapWrapper({ selectedFloor }: { selectedFloor: string }) {
   const floorContex = useContext(FloorContext);
   const setSelectedFloor = floorContex?.setSelectedFloor;
   const [modalOpen, setModalOpen] = useState(false);
@@ -33,11 +31,10 @@ function IndoorMapWrapper( {selectedFloor}: { selectedFloor: string;}) {
     if (!isEditMode) {
       const targetId = (e.target as HTMLElement).id;
       const selectedObject = objects.find((obj) => obj.name === targetId);
-      if (selectedObject?.id && selectedObject.floor==selectedFloor) {
-          setObject(selectedObject);
-          setModalOpen(true);
+      if (selectedObject?.id && selectedObject.floor === selectedFloor) {
+        setObject(selectedObject);
+        setModalOpen(true);
       } else {
-
         toast.error("Object not found");
       }
     }
@@ -51,11 +48,21 @@ function IndoorMapWrapper( {selectedFloor}: { selectedFloor: string;}) {
     }
   };
 
-function handleNavigationClick() {
+  function handleNavigationClick() {
     setModalOpen(false);
-    navigateToObject(object.name, navigation, setNavigation,selectedFloor ,setSelectedFloor);
+    if (setSelectedFloor) {
+      navigateToObject(
+        object.name,
+        navigation,
+        setNavigation,
+        selectedFloor,
+        setSelectedFloor
+      );
+    } else {
+      console.error("setSelectedFloor is undefined");
+    }
   }
- 
+
   return (
     <div className="relative w-full h-full bg-white center">
       <ObjectDetailsModal
@@ -74,25 +81,21 @@ function handleNavigationClick() {
         wheel={{ smoothStep: 0.01 }}
       >
         <TransformComponent wrapperClass="bg-white">
-          {/* Pass selectedFloor to MapBackground */}
           <MapBackground selectedFloor={selectedFloor}>
-            {/* Objects are the clickable areas on the map e.g. Rooms, Desks, ... */}
             <Objects
-            selectedFloor={selectedFloor}
+              selectedFloor={selectedFloor}
               handleObjectClick={handleObjectClick}
               className={
                 isEditMode ? "" : "hover:cursor-pointer hover:opacity-50"
               }
             />
-            {/* Edges are the lines on the map aka the paths */}
             <Paths />
-            {/* Vertexes are the circles on the map aka the positions */}
             <Positions
               positionRadius={positionRadius}
               handlePositionClick={handlePositionClick}
               className={
                 isEditMode
-                  ? "opacity-100 cursor-pointer hover:fill-[#488af4] "
+                  ? "opacity-100 cursor-pointer hover:fill-[#488af4]"
                   : "opacity-0"
               }
               navigation={navigation}

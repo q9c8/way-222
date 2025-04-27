@@ -1,5 +1,5 @@
 import { graphData, VertexData } from "@/store/graphData";
-import {floorIndex} from"@/utils/navigationHelper";
+
 
 type NodeId = string;
 interface Node {
