@@ -6,8 +6,9 @@ import {
   NavigationContextType,
   ObjectItem,
 } from "@/utils/types";
-import { MapDataContext, NavigationContext } from "../pages/Map";
+import { MapDataContext, NavigationContext,FloorContext } from "../pages/Map";
 import { navigateToObject } from "@/utils/navigationHelper";
+import {ObjectDetailsModal} from "@/components/Modals/ObjectDetailsModal";
 
 interface ParsedObjects {
   [key: string]: {
@@ -17,6 +18,9 @@ interface ParsedObjects {
 }
 
 function Sidebar() {
+  const floorContex = useContext(FloorContext);
+  const selectedFloor=floorContex?.selectedFloor;
+  const setSelectedFloor = floorContex?.setSelectedFloor;
   const { navigation, setNavigation, setIsEditMode } = useContext(
     NavigationContext
   ) as NavigationContextType;
@@ -49,8 +53,19 @@ function Sidebar() {
     const object = objects.find((obj) => obj.name === selectedObjectName);
     setIsEditMode(false);
     if (!object) return;
-    navigateToObject(object.name, navigation, setNavigation);
 
+    // if(object.floor!=selectedFloor)
+    //   {
+    //     <ObjectDetailsModal
+    //     open={modalOpen}
+    //     object={object}
+    //     onClose={() => setModalOpen((cur) => !cur)}
+    //     objectNavigation={handleNavigationClick}
+    //   />
+    //   }
+    navigateToObject(object.name, navigation, setNavigation,selectedFloor,setSelectedFloor);
+      // else{
+      // }
     setIsSidebarOpen(false); // Close sidebar on mobile after navigation
 
     // Update button position after object navigation
@@ -129,8 +144,11 @@ function Sidebar() {
                       onClick={() => handleObjectNavigation(item.name)}
                     >
                       <div className="m-1">
-                        <p className="text-xs 2xl:text-sm font-semibold">
+                        <p className="text-xs 2xl:text-xl font-semibold">
                           {item.name}
+                        </p>
+                          <p className="text-xs:text-xl text-gray-600">
+                          {item.floor} floor
                         </p>
                         <p className="text-xs 2xl:text-sm text-gray-600">
                           {item.desc}

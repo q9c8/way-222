@@ -1,4 +1,5 @@
 import { graphData, VertexData } from "@/store/graphData";
+import {floorIndex} from"@/utils/navigationHelper";
 
 type NodeId = string;
 interface Node {
@@ -158,23 +159,24 @@ class DijkstraCalculator {
 
 export const graph = new DijkstraCalculator();
 
-graphData.vertices.forEach((vertex) => {
+for(let i=0;i<graphData.length;i++){
+graphData[i].vertices.forEach((vertex) => {
   graph.addVertex(vertex.id);
 });
 
-graphData.edges.forEach((edge) => {
+graphData[i].edges.forEach((edge) => {
   //console.log(edge.from, edge.to);
   const { from, to } = edge;
-  const fromVertex = graphData.vertices.find((vertex) => vertex.id === from);
-  const toVertex = graphData.vertices.find((vertex) => vertex.id === to);
-
+  const fromVertex = graphData[i].vertices.find((vertex) => vertex.id === from);
+  const toVertex = graphData[i].vertices.find((vertex) => vertex.id === to);
   if (fromVertex && toVertex) {
+
     //add the distance between the two vertices as the weight of the edge
     const length = calculateDistance(fromVertex, toVertex);
     graph.addEdge(from, to, length);
   }
 });
-
+}
 function calculateDistance(vertex1: VertexData, vertex2: VertexData) {
   const dx = vertex2.cx - vertex1.cx;
   const dy = vertex2.cy - vertex1.cy;

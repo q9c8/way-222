@@ -12,11 +12,14 @@ export interface EdgeData {
 }
 
 export interface GraphData {
+  floor:string,
   vertices: VertexData[];
   edges: EdgeData[];
 }
 
-export const graphData: GraphData = {
+export const graphData: GraphData[] = [
+  {
+  "floor": "ground",
   'vertices': [
     {
       "id": "v1",
@@ -53,6 +56,30 @@ export const graphData: GraphData = {
       "objectName": "G136",
       "cx": 426.46875,
       "cy": 829
+
+    }
+    ,{"id": "v27",
+      "objectName": null,
+      "cx": 730.46875,
+      "cy": 586
+    },
+    {
+      "id": "v28",
+      "objectName": null,
+      "cx": 629.1944427490234,
+      "cy": 642.9027709960938
+    },
+    {
+      "id": "v29",
+      "objectName": null,
+      "cx": 580.1944427490234,
+      "cy": 710.9027709960938
+    },
+    {
+      "id": "v30",
+      "objectName": "M250-8",
+      "cx": 589.1944427490234,
+      "cy": 743.9027709960938
     }
   //   { 'id': 'v1', 'objectName': null, 'cx': 845.293, 'cy': 605.239 },
   //   { 'id': 'v2', 'objectName': null, 'cx': 1040.985, 'cy': 416.62 },
@@ -223,7 +250,7 @@ export const graphData: GraphData = {
   //   }
 
   ],
-  'edges': [
+  'edges':[
     // { 'id': 'e1', 'from': 'v1', 'to': 'v2' },
     // { 'id': 'e2', 'from': 'v2', 'to': 'v4' },
     // { 'id': 'e3', 'from': 'v4', 'to': 'v5' },
@@ -399,5 +426,100 @@ export const graphData: GraphData = {
       "to": "v6"
     }
     
-  ]
-};
+  
+
+    ,{
+      "id": "e17",
+      "from": "v1",
+      "to": "v28"
+    },
+    {
+      "id": "e18",
+      "from": "v28",
+      "to": "v29"
+    },
+    {
+      "id": "e19",
+      "from": "v29",
+      "to": "v30"
+    }
+  ]},{
+    "floor": "first",
+  "vertices": [
+    
+    {
+      "id": "v1",
+      "objectName": null,
+      "cx": 731.2083339691162,
+      "cy": 588.4062576293945
+    },
+    {
+      "id": "v32",
+      "objectName": null,
+      "cx": 670.2083339691162,
+      "cy": 638.4062576293945
+    },
+    {
+      "id": "v33",
+      "objectName": null,
+      "cx": 595.2083339691162,
+      "cy": 682.4062576293945
+    },
+    {
+      "id": "v34",
+      "objectName": null,
+      "cx": 514.2083339691162,
+      "cy": 671.4062576293945
+    },
+    {
+      "id": "v35",
+      "objectName": null,
+      "cx": 488.2083339691162,
+      "cy": 601.4062576293945
+    },
+    {
+      "id": "v36",
+      "objectName": null,
+      "cx": 481.2083339691162,
+      "cy": 549.4062576293945
+    },
+    {
+      "id": "v37",
+      "objectName": "OTG Group",
+      "cx": 492.2083339691162,
+      "cy": 494.40625762939453
+    }
+  ],
+  "edges": [
+    {
+      "id": "e20",
+      "from": "v1",
+      "to": "v32"
+    },
+    {
+      "id": "e21",
+      "from": "v32",
+      "to": "v33"
+    },
+    {
+      "id": "e22",
+      "from": "v33",
+      "to": "v34"
+    },
+    {
+      "id": "e23",
+      "from": "v34",
+      "to": "v35"
+    },
+    {
+      "id": "e24",
+      "from": "v35",
+      "to": "v36"
+    },
+    {
+      "id": "e25",
+      "from": "v36",
+      "to": "v37"
+    }
+  ]}
+];

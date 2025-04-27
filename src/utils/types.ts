@@ -6,6 +6,7 @@ export interface ObjectItem {
   desc: string;
   categoryId: string;
   categoryName?: string;
+  floor: string;
 }
 export interface Category {
   id: string;
@@ -48,4 +49,11 @@ export interface BleBeacon {
   rssi: number;
   txPower: number;
   uuids: string[];
+}export interface FloorContextType {
+  selectedFloor: string;
+  setSelectedFloor: (floor: string) => void;
+}
+export interface modaleOpenContextType{
+  modalOpen: boolean;
+  setModalOpen: (floor: boolean) => void;
 }

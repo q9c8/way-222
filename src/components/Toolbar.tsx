@@ -6,8 +6,9 @@ import EditPositionButton from "./EditPositionButton";
 import DesktopRouteDetails from "./DesktopRouteDetails";
 import SearchBar from "./SearchBar";
 import Sidebar from "./Sidebar";
+import FloorOption from "./floorOption";
 
-function Toolbar() {
+function Toolbar( {selectedFloor, setSelectedFloor }: { selectedFloor: string; setSelectedFloor: (floor: string) => void }) {
   const { navigation } = useContext(NavigationContext) as NavigationContextType;
   return (
     <div className="flex space-x-1 mb-4 h-12 relative">
@@ -16,6 +17,7 @@ function Toolbar() {
       </div>
       <SearchBar />
       <EditPositionButton />
+      <FloorOption selectedFloor={selectedFloor} setSelectedFloor={setSelectedFloor}/>
       {navigation.end && isDesktop && <DesktopRouteDetails />}
     </div>
   );

@@ -6,7 +6,7 @@ import {
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { FiCircle, FiNavigation } from "react-icons/fi";
 import { useOnClickOutside } from "usehooks-ts";
-import { MapDataContext, NavigationContext } from "../pages/Map";
+import { FloorContext, MapDataContext, NavigationContext } from "../pages/Map";
 import {
   MapDataContextType,
   NavigationContextType,
@@ -14,6 +14,9 @@ import {
 } from "../utils/types";
 
 function SearchBar() {
+    const floorContex = useContext(FloorContext);
+    const selectedFloor=floorContex?.selectedFloor;
+    const setSelectedFloor = floorContex?.setSelectedFloor;
   const [inputValue, setInputValue] = useState<string>("");
   const { objects } = useContext(MapDataContext) as MapDataContextType;
   const [suggestions, setSuggestions] = useState<ObjectItem[]>(objects);
@@ -76,7 +79,7 @@ function SearchBar() {
         navigateToObject(
           suggestions[selectedIndex].name,
           navigation,
-          setNavigation
+          setNavigation,selectedFloor,setSelectedFloor
         );
       }
     }
@@ -129,7 +132,7 @@ function SearchBar() {
     }
 
     // Successful search
-    navigateToObject(matchingObject.name, navigation, setNavigation);
+    navigateToObject(matchingObject.name, navigation, setNavigation,selectedFloor,setSelectedFloor);
     setSelectedIndex(-1);
     setShowTooltip(false); // Hide tooltip after a valid search
   }

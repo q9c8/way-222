@@ -29,5 +29,7 @@ export const objects: ObjectItem[] = [
   // { id: "m4n7", categoryId: "40cd", name: "Men Washroom 2", desc: "Men Washroom" },
   // { id: "m4n8", categoryId: "40cd", name: "Women Washroom 2", desc: "Women Washroom" },
   // { id: "m4n90", categoryId: "40cd", name: "OSQA Group", desc: "Office Services" },
-  { id: "l2m3", categoryId: "856b", name: "G136", desc: "Lab" }
+  {
+    id: "l2m3", categoryId: "856b", name: "G136", desc: "Lab",floor: "ground"
+  }, { id: "m3n4", categoryId: "2e92", name: "M250-8", desc: "Conference Room",  floor: "ground" },{ id: "l2m3", categoryId: "40cd", name: "OTG Group", desc: "Office Services" ,floor:"first"}
 ];

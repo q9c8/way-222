@@ -1,5 +1,9 @@
 import { graphData } from "@/store/graphData";
 import { NavigationContextType } from "@/utils/types";
+import {floorIndex} from"@/utils/navigationHelper";
+
+
+
 
 interface PositionsProps {
   positionRadius: number;
@@ -16,10 +20,14 @@ function Positions({
   const positionBackgroundColor = "#4285f4";
   const positionBackgroundRadius = positionRadius + 7;
   const positonBackgroundOpacity = 0.2;
-  const startVertex = graphData.vertices.find(
-    (v) => v.id === navigation?.start
-  );
 
+  const startVertex = graphData[floorIndex].vertices.find(
+    (v) => v.id === navigation?.start
+  ) || graphData[floorIndex].vertices.find(
+    (v) => v.id === "v1"
+  );
+  
+  
   function isActivePosition(vertexId: string) {
     return navigation?.start === vertexId;
   }
@@ -34,7 +42,7 @@ function Positions({
         opacity={positonBackgroundOpacity}
         r={positionBackgroundRadius}
       />
-      {graphData.vertices.map((vertex) => (
+      {graphData[floorIndex].vertices.map((vertex) => (
         <circle
           // only allow click on positions that are not referring to an object
           onClick={vertex.objectName ? () => {} : handlePositionClick}

@@ -7,6 +7,7 @@ interface DialogProps {
 }
 
 export function Dialog({ open, handler, children }: DialogProps) {
+  
   const dialogRef = useRef<HTMLDivElement>(null);
   const [showDialog, setShowDialog] = useState(open);
   const [animationPhase, setAnimationPhase] = useState<"fadeIn" | "fadeOut">(

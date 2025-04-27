@@ -1,10 +1,19 @@
+import {objects} from "@/../server/data";
 interface ObjectsProps {
+  selectedFloor: string;
   handleObjectClick: (e: React.MouseEvent<SVGPathElement>) => void;
   className?: string;
 }
 
-function Objects({ handleObjectClick, className }: ObjectsProps) {
-  
+function isHidden(id:string,Floor:string){
+  const selectedObject = objects.find((obj) => obj.name === id);
+    if(selectedObject?.floor==Floor)
+return false;
+    else
+    return true; 
+}
+
+function Objects({  selectedFloor,handleObjectClick, className }: ObjectsProps) {
 
   return (
     <g id="Objects">
@@ -13,7 +22,7 @@ function Objects({ handleObjectClick, className }: ObjectsProps) {
 id="G136"
 className={`${className} object`}
 d="M662.456 664.811h38.321v58.115h-38.321z"
-    style={{
+    style={{display: isHidden("G136",selectedFloor) ? "none" : "block",
       transformBox: "fill-box",
       transformOrigin: "50% 50%",
       strokeWidth: 0,

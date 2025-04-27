@@ -2,7 +2,7 @@ import { ObjectItem } from "@/utils/types";
 import { FiNavigation } from "react-icons/fi";
 import { DialogBody, DialogHeader } from "../ui/Dialog";
 
-interface ObjectDetailsViewProps {
+export interface ObjectDetailsViewProps {
   object: ObjectItem;
   handleEditClick: () => void;
   objectNavigation: () => void;
@@ -11,7 +11,7 @@ interface ObjectDetailsViewProps {
 function ObjectDetailsView({
   object,
   handleEditClick,
-  objectNavigation,
+  objectNavigation
 }: ObjectDetailsViewProps) {
   const isEditable = import.meta.env.PROD ? false : true;
   return (
@@ -21,6 +21,7 @@ function ObjectDetailsView({
       </DialogHeader>
       <DialogBody>
         <div className="mb-6">
+        <p className="text-2xl font-medium text-gray-900">This room is in the {object.floor} floor.</p>
           <p className="text-lg font-medium text-gray-900">{object.name}</p>
           <p className="text-md text-gray-700">{object.desc}</p>
         </div>
