@@ -79,7 +79,9 @@ function SearchBar() {
         navigateToObject(
           suggestions[selectedIndex].name,
           navigation,
-          setNavigation,selectedFloor,setSelectedFloor
+          setNavigation,
+          selectedFloor || "ground",
+          setSelectedFloor!
         );
       }
     }
@@ -123,7 +125,7 @@ function SearchBar() {
     if (!matchingObject) {
       if (inputValue === "Test") {
         const delay = 500;
-        navigationTestAll(objects, 0, delay, navigation, setNavigation);
+        navigationTestAll(objects, 0, delay, navigation, setNavigation,selectedFloor || "ground",() => setSelectedFloor);
         return;
       } else {
         setIsInputInvalid(true);
@@ -132,7 +134,19 @@ function SearchBar() {
     }
 
     // Successful search
-    navigateToObject(matchingObject.name, navigation, setNavigation,selectedFloor,setSelectedFloor);
+     if (!matchingObject || !setSelectedFloor) return; // <- Make sure setSelectedFloor exists!
+
+    console.log(selectedFloor);
+  
+    const newFloor = navigateToObject(
+      matchingObject.name,
+      navigation,
+      setNavigation,
+      selectedFloor || "ground",
+      setSelectedFloor
+    );
+  
+    setSelectedFloor(newFloor);
     setSelectedIndex(-1);
     setShowTooltip(false); // Hide tooltip after a valid search
   }

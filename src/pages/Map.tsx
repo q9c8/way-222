@@ -8,22 +8,20 @@ import { useSearchParams } from "react-router-dom";
 import {
   MapDataContextType,
   Navigation,
-  NavigationContextType,FloorContextType,modaleOpenContextType
+  NavigationContextType,FloorContextType
 } from "../utils/types";
 import Sidebar from "@/components/Sidebar";
 
-export const FloorContext = createContext<FloorContextType | null>("ground");
+export const FloorContext = createContext<FloorContextType | null>(null);
 export const NavigationContext = createContext<NavigationContextType | null>(
   null
 );
-export const modalOpenContext = createContext<modaleOpenContextType>(
-  false
-);
+
 export const MapDataContext = createContext<MapDataContextType | null>(null);
 
 function Map() {
   let [searchParams, setSearchParams] = useSearchParams();
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
+ 
   const defaultPosition = "v1";
   const startPosition = searchParams.get("position") || defaultPosition;
   const [navigation, setNavigation] = useState<Navigation>({
@@ -51,7 +49,6 @@ function Map() {
     <MapDataContext.Provider value={mapData}>
       <NavigationContext.Provider value={navigationValue}>
         <div className="flex bg-gray-100 text-gray-800 relative overflow-hidden w-full h-screen">
-          <modalOpenContext.Provider value={{modalOpen, setModalOpen}}>
 
           {isDesktop && <Sidebar></Sidebar>}
           <main
@@ -63,7 +60,7 @@ function Map() {
      
             </div>
           </main>
-              </modalOpenContext.Provider>
+             
           {navigation.end && isMobile && <MobileRouteDetails />}
               
         </div>

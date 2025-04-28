@@ -8,7 +8,7 @@ import {
 } from "@/utils/types";
 import { MapDataContext, NavigationContext,FloorContext } from "../pages/Map";
 import { navigateToObject } from "@/utils/navigationHelper";
-import {ObjectDetailsModal} from "@/components/Modals/ObjectDetailsModal";
+
 
 interface ParsedObjects {
   [key: string]: {
@@ -18,9 +18,9 @@ interface ParsedObjects {
 }
 
 function Sidebar() {
-  const floorContex = useContext(FloorContext);
-  const selectedFloor=floorContex?.selectedFloor;
-  const setSelectedFloor = floorContex?.setSelectedFloor;
+  const floor= useContext(FloorContext);
+  const selectedFloor=floor?.selectedFloor;
+  const setSelectedFloor = floor?.setSelectedFloor;
   const { navigation, setNavigation, setIsEditMode } = useContext(
     NavigationContext
   ) as NavigationContextType;
@@ -54,18 +54,22 @@ function Sidebar() {
     setIsEditMode(false);
     if (!object) return;
 
-    // if(object.floor!=selectedFloor)
-    //   {
-    //     <ObjectDetailsModal
-    //     open={modalOpen}
-    //     object={object}
-    //     onClose={() => setModalOpen((cur) => !cur)}
-    //     objectNavigation={handleNavigationClick}
-    //   />
-    //   }
-    navigateToObject(object.name, navigation, setNavigation,selectedFloor,setSelectedFloor);
-      // else{
-      // }
+
+    if (!object || !setSelectedFloor) return; // <- Make sure setSelectedFloor exists!
+
+    console.log(selectedFloor);
+  
+    const newFloor = navigateToObject(
+      object.name,
+      navigation,
+      setNavigation,
+      selectedFloor || "ground",
+      setSelectedFloor
+    );
+  
+    setSelectedFloor(newFloor);
+  
+      
     setIsSidebarOpen(false); // Close sidebar on mobile after navigation
 
     // Update button position after object navigation

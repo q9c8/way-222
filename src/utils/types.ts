@@ -53,7 +53,3 @@ export interface BleBeacon {
   selectedFloor: string;
   setSelectedFloor: (floor: string) => void;
 }
-export interface modaleOpenContextType{
-  modalOpen: boolean;
-  setModalOpen: (floor: boolean) => void;
-}
