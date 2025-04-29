@@ -1,6 +1,7 @@
   import { ReactNode } from "react";
   import groundFloor from "@/assets/img/mall-floor-plan1.svg";
-  import firstFloor from "@/assets/img/mall-floor-plan.svg";
+  import firstFloor from "@/assets/img/1 6.svg";
+  import secondFloor from "@/assets/img/second-floor 1 (1).svg";
   interface MapBackgroundProps {
     children: ReactNode;
     selectedFloor: string;
@@ -10,7 +11,7 @@
     const floorImages: Record<string, string> = {
       ground: groundFloor,
       first: firstFloor,
-      // second: secondFloor,
+      second: secondFloor,
     };
     return (
       <svg

@@ -86,7 +86,7 @@ function IndoorMapWrapper({ selectedFloor }: { selectedFloor: string }) {
               selectedFloor={selectedFloor}
               handleObjectClick={handleObjectClick}
               className={
-                isEditMode ? "" : "hover:cursor-pointer hover:opacity-50"
+                isEditMode ? "" : "hover:cursor-pointer hover:opacity-100"
               }
             />
             <Paths />

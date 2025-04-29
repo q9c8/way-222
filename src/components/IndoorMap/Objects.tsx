@@ -27,9 +27,93 @@ d="M662.456 664.811h38.321v58.115h-38.321z"
       transformOrigin: "50% 50%",
       strokeWidth: 0,
       stroke: "#f46c6c",
-      fill: "#f2a0a0",
+      fill: "#247dff",
+      fillOpacity: 0.5,
     }}
     transform="rotate(45 -298.266 -221.451)"
+    onClick={(e) => handleObjectClick(e)}
+  />
+
+<path
+id="Digital Hardware Lab - 2035"
+className={`${className} object`}
+    d="M840.077 581.268h71.38v113.175h-71.38z"
+    style={{display: isHidden("Digital Hardware Lab - 2035",selectedFloor) ? "none" : "block",
+      fill: "#d8d8d8",
+      stroke: "#000",
+      strokeOpacity: 0,
+      opacity: 0.26,
+    }}
+    onClick={(e) => handleObjectClick(e)}
+  />
+
+<path
+id="Electronics Lab - 2023"
+className={`${className} object`}
+    d="M544.696 580.329h71.38v114.584h-71.38z"
+    style={{display: isHidden("Electronics Lab - 2023",selectedFloor) ? "none" : "block",
+      fill: "#d8d8d8",
+      stroke: "#000",
+      strokeOpacity: 0,
+      opacity: 0.3,
+    }}
+    onClick={(e) => handleObjectClick(e)}
+  />
+
+<path
+id="Creativity & Innovation Hall"
+className={`${className} object`}
+    d="M692.621 593.009h70.91v75.606h51.187v39.428l-1.02-1.02-10.431 10.431H692.621Z"
+    style={{display: isHidden("Creativity & Innovation Hall",selectedFloor) ? "none" : "block",
+      fill: "#d8d8d8",
+      stroke: "#000",
+      opacity: 0.48,
+      strokeOpacity: 0,
+    }}
+    onClick={(e) => handleObjectClick(e)}
+  />
+
+<path
+id="G135"
+className={`${className} object`}
+    d="M748.301 552.616h38.312v40.06h-38.312z"
+    style={{display: isHidden("G135",selectedFloor) ? "none" : "block",
+      stroke: "#000",
+      strokeOpacity: 0,
+      fillOpacity: 0.5,
+      fill: "#247dff",
+      transformOrigin: "767.457px 572.646px",
+    }}
+    transform="rotate(-45 182.095 590.755)"
+    onClick={(e) => handleObjectClick(e)}
+  />
+
+  <path
+  id="G138"
+  className={`${className} object`}
+    d="M537.2 544.333h27.504v39.46H537.2z"
+    style={{display: isHidden("G138",selectedFloor) ? "none" : "block",
+      stroke: "#000",
+      strokeOpacity: 0,
+      fillOpacity: 0.5,
+      fill: "#247dff",
+      transformBox: "fill-box",
+      transformOrigin: "50% 50%",
+    }}
+    transform="rotate(-45 234.976 173.477)"
+    onClick={(e) => handleObjectClick(e)}
+  />
+  <path
+  id="Exam Hall"
+  className={`${className} object`}
+    d="m641.313 742.498 175.681.201-.77 89.101-25.425 25.425-123.609-.141-26.636-26.636Z"
+    style={{display: isHidden("Exam Hall",selectedFloor) ? "none" : "block",
+      stroke: "#000",
+      fill: "red",
+      fillOpacity: 0.5,
+      strokeOpacity: 0,
+      
+    }}
     onClick={(e) => handleObjectClick(e)}
   />
 
