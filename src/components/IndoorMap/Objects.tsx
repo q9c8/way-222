@@ -109,9 +109,8 @@ className={`${className} object`}
     d="m641.313 742.498 175.681.201-.77 89.101-25.425 25.425-123.609-.141-26.636-26.636Z"
     style={{display: isHidden("Exam Hall",selectedFloor) ? "none" : "block",
       stroke: "#000",
-      fill: "red",
-      fillOpacity: 0.5,
-      strokeOpacity: 0,
+      
+      
       
     }}
     onClick={(e) => handleObjectClick(e)}
