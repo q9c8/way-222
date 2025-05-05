@@ -34,6 +34,58 @@ d="M662.456 664.811h38.321v58.115h-38.321z"
     onClick={(e) => handleObjectClick(e)}
   />
 
+
+<path
+id="Dr. Irfan - 1084"
+className={`${className} object`}
+d="M239.626 613.992h29.646v30.421h-29.646z"
+    style={{display: isHidden("Dr. Irfan - 1084",selectedFloor) ? "none" : "block",
+      fill: "#d8d8d8",
+      stroke: "#000",
+      strokeOpacity: 0,
+      fillOpacity: 0.51,
+      transformBox: "fill-box",
+      transformOrigin: "50% 50%",
+    }}
+    transform="rotate(45 -204.067 111.063)"
+    onClick={(e) => handleObjectClick(e)}
+  />
+
+
+<path
+id="Dr. Atta - 1165"
+className={`${className} object`}
+d="M955.511 383.751h27.767v37.365h-27.767z"
+    style={{display: isHidden("Dr. Atta - 1165",selectedFloor) ? "none" : "block",
+      fill: "#d8d8d8",
+      stroke: "#000",
+      strokeOpacity: 0,
+      fillOpacity: 0.5,
+      transformBox: "fill-box",
+      transformOrigin: "50% 50%",
+    }}
+    transform="rotate(-45 171.124 -131.932)"
+    onClick={(e) => handleObjectClick(e)}
+  />
+
+
+<path
+id="Dr. Khalid Aloup - G060"
+className={`${className} object`}
+d="M509.025 625.364h41.401v42.675h-41.401z"
+    style={{display: isHidden("Dr. Khalid Aloup - G060",selectedFloor) ? "none" : "block",
+      fill: "#d8d8d8",
+      stroke: "#000",
+      strokeOpacity: 0,
+      fillOpacity: 0.5,
+      transformBox: "fill-box",
+      transformOrigin: "50% 50%",
+    }}
+    transform="rotate(-45 159.338 150.595)"
+    onClick={(e) => handleObjectClick(e)}
+  />
+
+
 <path
 id="Digital Hardware Lab - 2035"
 className={`${className} object`}

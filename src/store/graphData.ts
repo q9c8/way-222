@@ -22,6 +22,18 @@ export const graphData: GraphData[] = [
   "floor": "ground",
   'vertices': [
     {
+      "id": "v92",
+      "objectName": null,
+      "cx": 444.46875,
+      "cy": 777
+    },
+    {
+      "id": "v93",
+      "objectName": "Dr. Khalid Aloup - G060",
+      "cx": 458.46875,
+      "cy": 788
+    },
+    {
       "id": "v1",
       "objectName": null,
       "cx": 729.46875,
@@ -79,6 +91,11 @@ export const graphData: GraphData[] = [
   ],
   'edges':[
     {
+      "id": "e678",
+      "from": "v14",
+      "to": "v92"
+    },
+    {
       "id": "e6",
       "from": "v7",
       "to": "v8"
@@ -132,6 +149,11 @@ export const graphData: GraphData[] = [
       "id": "e16",
       "from": "v16",
       "to": "v18"
+    },
+    {
+      "id": "e76",
+      "from": "v92",
+      "to": "v93"
     }
   ]},{
     "floor": "first",
@@ -166,9 +188,109 @@ export const graphData: GraphData[] = [
       "objectName": "Exam Hall",
       "cx": 658.46875,
       "cy": 736
+    },
+    {
+      "id": "v77",
+      "objectName": null,
+      "cx": 526.46875,
+      "cy": 728
+    },
+    {
+      "id": "v78",
+      "objectName": null,
+      "cx": 479.46875,
+      "cy": 773
+    },
+    {
+      "id": "v79",
+      "objectName": null,
+      "cx": 419.46875,
+      "cy": 710
+    },
+    {
+      "id": "v80",
+      "objectName": null,
+      "cx": 285.46875,
+      "cy": 833
+    },
+    {
+      "id": "v81",
+      "objectName": "Dr. Irfan - 1084",
+      "cx": 274.46875,
+      "cy": 821
+    },
+    {
+      "id": "v82",
+      "objectName": null,
+      "cx": 918.46875,
+      "cy": 707
+    },
+    {
+      "id": "v83",
+      "objectName": null,
+      "cx": 995.46875,
+      "cy": 643
+    },
+    {
+      "id": "v84",
+      "objectName": null,
+      "cx": 994.46875,
+      "cy": 588
+    },
+    {
+      "id": "v85",
+      "objectName": null,
+      "cx": 918.46875,
+      "cy": 508
+    },
+    {
+      "id": "v86",
+      "objectName": null,
+      "cx": 1016.46875,
+      "cy": 410
+    },
+    {
+      "id": "v87",
+      "objectName": null,
+      "cx": 1078.46875,
+      "cy": 472
+    },
+    {
+      "id": "v88",
+      "objectName": null,
+      "cx": 1084.46875,
+      "cy": 464
+    },
+    {
+      "id": "v89",
+      "objectName": "Dr. Atta - 1165",
+      "cx": 1096.46875,
+      "cy": 477
+    },
+    {
+      "id": "v90",
+      "objectName": null,
+      "cx": 534.46875,
+      "cy": 516
+    },
+    {
+      "id": "v91",
+      "objectName": null,
+      "cx": 896.46875,
+      "cy": 520
     }
   ],
   "edges": [
+    {
+      "id": "e62",
+      "from": "v23",
+      "to": "v82"
+    },
+    {
+      "id": "e622",
+      "from": "v1",
+      "to": "v90"
+    },
     {
       "id": "e16",
       "from": "v1",
@@ -188,6 +310,78 @@ export const graphData: GraphData[] = [
       "id": "e19",
       "from": "v23",
       "to": "v24"
+    },
+
+    {
+      "id": "e60",
+      "from": "v22",
+      "to": "v77"
+    },
+
+    {
+      "id": "e64",
+      "from": "v77",
+      "to": "v78"
+    },
+    {
+      "id": "e65",
+      "from": "v78",
+      "to": "v79"
+    },
+    {
+      "id": "e66",
+      "from": "v79",
+      "to": "v80"
+    },
+    {
+      "id": "e67",
+      "from": "v80",
+      "to": "v81"
+    },
+    {
+      "id": "e68",
+      "from": "v82",
+      "to": "v83"
+    },
+    {
+      "id": "e69",
+      "from": "v83",
+      "to": "v84"
+    },
+    {
+      "id": "e70",
+      "from": "v84",
+      "to": "v85"
+    },
+    {
+      "id": "e71",
+      "from": "v85",
+      "to": "v86"
+    },
+    {
+      "id": "e72",
+      "from": "v86",
+      "to": "v87"
+    },
+    {
+      "id": "e73",
+      "from": "v87",
+      "to": "v88"
+    },
+    {
+      "id": "e74",
+      "from": "v88",
+      "to": "v89"
+    },
+    {
+      "id": "e75",
+      "from": "v90",
+      "to": "v91"
+    },
+    {
+      "id": "e76",
+      "from": "v85",
+      "to": "v91"
     }
   ]},{
     "floor": "second",

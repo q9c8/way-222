@@ -19,4 +19,7 @@ export const objects: ObjectItem[] = [
   { id: "l2m6", categoryId: "6adf", name: "Electronics Lab - 2023", desc: "Lab" ,floor:"second"},
   { id: "l2m9", categoryId: "6adf", name: "Digital Hardware Lab - 2035", desc: "Lab" ,floor:"second"},
   { id: "l2m2", categoryId: "9885", name: "Creativity & Innovation Hall", desc: "Room" ,floor:"second"},
+  { id: "l2m56", categoryId: "9885", name: "Dr. Irfan - 1084", desc: "Room" ,floor:"first"},
+  { id: "l2m26", categoryId: "9885", name: "Dr. Atta - 1165", desc: "Room" ,floor:"first"},
+  { id: "l2m256", categoryId: "9885", name: "Dr. Khalid Aloup - G060", desc: "Room" ,floor:"ground"},
 ];

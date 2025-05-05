@@ -1,6 +1,6 @@
   import { ReactNode } from "react";
-  import groundFloor from "@/assets/img/mall-floor-plan1.svg";
-  import firstFloor from "@/assets/img/1 6.svg";
+  import groundFloor from "@/assets/img/Ground.jpeg";
+  import firstFloor from "@/assets/img/1.jpg";
   import secondFloor from "@/assets/img/second-floor 1 (1).svg";
   interface MapBackgroundProps {
     children: ReactNode;
