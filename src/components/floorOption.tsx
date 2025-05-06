@@ -2,9 +2,11 @@ import { resetEdges } from "@/utils/navigationHelper";
 function FloorOption( {selectedFloor, setSelectedFloor }: { selectedFloor: string; setSelectedFloor: (floor: string) => void })
 {
     function floorChange(e: React.ChangeEvent<HTMLSelectElement>) {
+
         const newFloor = e.target.value;
         setSelectedFloor(newFloor);
         resetEdges();
+        
       }
         return(
         <select

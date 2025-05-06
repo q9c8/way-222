@@ -57,8 +57,6 @@ function Sidebar() {
 
     if (!object || !setSelectedFloor) return; // <- Make sure setSelectedFloor exists!
 
-    console.log(selectedFloor);
-  
     const newFloor = navigateToObject(
       object.name,
       navigation,

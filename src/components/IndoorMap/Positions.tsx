@@ -1,7 +1,7 @@
 import { graphData } from "@/store/graphData";
 import { NavigationContextType } from "@/utils/types";
-import {floorIndex} from"@/utils/navigationHelper";
-
+import { useContext } from "react";
+import { FloorContext } from "@/pages/Map";
 
 
 
@@ -11,6 +11,7 @@ interface PositionsProps {
   className: string;
   navigation?: NavigationContextType["navigation"];
 }
+
 function Positions({
   positionRadius,
   handlePositionClick,
@@ -20,13 +21,20 @@ function Positions({
   const positionBackgroundColor = "#4285f4";
   const positionBackgroundRadius = positionRadius + 7;
   const positonBackgroundOpacity = 0.2;
-
-  const startVertex = graphData[floorIndex].vertices.find(
+const floorContex = useContext(FloorContext);
+const selectedFloor=floorContex?.selectedFloor;
+  const startVertex = graphData[getFloorIndex(selectedFloor || "ground")].vertices.find(
     (v) => v.id === navigation?.start
-  ) || graphData[floorIndex].vertices.find(
+  ) || graphData[getFloorIndex(selectedFloor || "ground")].vertices.find(
     (v) => v.id === "v1"
   );
   
+  function getFloorIndex(floor: string): number {
+    if (floor === "ground") return 0;
+    if (floor === "first") return 1;
+    if (floor === "second") return 2;
+    return 0;
+  }
   
   function isActivePosition(vertexId: string) {
     return navigation?.start === vertexId;
@@ -42,7 +50,7 @@ function Positions({
         opacity={positonBackgroundOpacity}
         r={positionBackgroundRadius}
       />
-      {graphData[floorIndex].vertices.map((vertex) => (
+      {graphData[getFloorIndex(selectedFloor || "ground")].vertices.map((vertex) => (
         <circle
           // only allow click on positions that are not referring to an object
           onClick={vertex.objectName ? () => {} : handlePositionClick}

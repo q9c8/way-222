@@ -40,7 +40,6 @@ function Map() {
   useEffect(() => {
     setSearchParams({ position: navigation.start });
   }, [navigation.start]);
-  
   const mapData = useMapData();
   return (
         
