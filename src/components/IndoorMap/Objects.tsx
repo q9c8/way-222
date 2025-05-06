@@ -86,6 +86,7 @@ d="M509.025 625.364h41.401v42.675h-41.401z"
   />
 
 
+
 <path
 id="Digital Hardware Lab - 2035"
 className={`${className} object`}

@@ -4,4 +4,4 @@
 "# indoor" 
 "# wayfinding" 
 "# wayfinding" 
-"# way-222" 
+"# way-finder" 
