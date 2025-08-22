@@ -1,8 +1,2 @@
 The CCSIT Indoor Wayfinding System is a web-based application designed to help students, staff, and visitors navigate the College of Computer Science and Information Technology (CCSIT) more efficiently.
-The system provides clear directions to classrooms, offices, and other important facilities through interactive maps.
-Features:
-1-Search Bar: Quickly search for rooms by name or number.
-2-Point Button: Allows users to set their current location on the map and view routes to selected rooms.
-3-Floor Selection Dropdown: Switch between building floors. The system automatically updates the map when navigating to a room on a different floor.
-4-Room List Panel: Displays all available rooms for quick access.
-5-Interactive Map: Central map area with pan and zoom functionality.
+The system provides clear directions to classrooms, offices, and other important facilities through interactive maps.The system includes several key features designed to enhance indoor navigation. A search bar allows users to quickly find specific rooms by name or number. The point button enables users to set their current location on the map and view the route to a selected room. A floor selection dropdown makes it easy to switch between different building floors, with the map updating automatically when navigating to a room on another level. On the left side, a room list panel provides quick access to all available rooms. At the center, an interactive map supports pan and zoom functionality, allowing users to explore the building layout with ease.
